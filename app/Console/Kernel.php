@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        // It will only be found if you manually register it here:
+        // \MyCustomApp\Console\Commands\ThisCommandWillNotBeFound::class,
     ];
 
     /**
@@ -36,6 +37,9 @@ class Kernel extends ConsoleKernel
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');
+
+        // Trying to auto-register any commands in this dir fails:
+        $this->load(base_path('MyCustomApp/Console/Commands'));
 
         require base_path('routes/console.php');
     }
