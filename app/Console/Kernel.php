@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        //
         // It will only be found if you manually register it here:
         // \MyCustomApp\Console\Commands\ThisCommandWillNotBeFound::class,
     ];
